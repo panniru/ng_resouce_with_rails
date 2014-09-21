@@ -1,0 +1,12 @@
+.col-md-6
+  %form{:method => "post", :class => "form-horizontal", :ng_submit => "submit()"}
+    .form-group
+      %label.control-label.col-md-3 ISBN
+      .col-md-7
+        %input{:type => 'text', :ng_model => "book.isbn", :class => "form-control"}
+    .form-group
+      %label.control-label.col-md-3 Name
+      .col-md-7
+        %input{:type => 'text', :ng_model => "book.name", :class => "form-control"}
+    .form-group
+      %button{:type => "submit", :class => "btn btn-primary btn-sm col-md-offset-8"} Save

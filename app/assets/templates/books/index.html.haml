@@ -1,0 +1,21 @@
+.col-md-6
+  %h4
+    Books
+    .pull-right
+      %a{:href => "#/new", :class => "btn btn-primary btn-sm"} New Book
+  
+  %table.table.table-condensed.table-bordered
+    %thead
+      %th ISBN
+      %th Name
+      %th Is Damaged
+      %th
+    %tbody
+      %tr{:ng_repeat => "book in books"}
+        %td {{book.isbn}}
+        %td {{book.name}}
+        %td {{book.damaged}}
+        %td 
+          %a{:href => "#/{{book.id}}/edit", :class => "btn btn-warning btn-sm "} Edit
+          %a{:href => "", :ng_click => "destroy(book)", :class => "btn btn-danger btn-sm "} Delete
+          %a{:href => "", :ng_click => "markAsDamaged(book)", :class => "btn btn-info btn-sm" , :ng_hide => "book.damaged"} Marks as damaged
