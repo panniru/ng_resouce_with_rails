@@ -51,8 +51,6 @@ class BooksController < ApplicationController
       format.json do
         book = Book.find(params[:id])
         book.update(:damaged => true)
-        p "========="
-        p book
         render :json => book
       end
     end
